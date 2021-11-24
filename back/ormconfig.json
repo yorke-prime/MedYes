@@ -1,0 +1,14 @@
+{
+    "type": "postgres",
+    "port": 5432,
+    "host": "localhost",
+    "username": "docker",
+    "password": "fwdtest",
+    "database": "fwdback",
+    "migrations": ["./src/shared/infra/database/migrations/*.ts"],
+    "entities": ["./src/modules/**/entities/*.ts"],
+    "cli": {
+      "migrationsDir": "./src/shared/infra/database/migrations"
+    }
+  }
+  
