@@ -1,16 +1,13 @@
-import express, { response, request } from "express";
+import express from "express";
 import "reflect-metadata";
 
 import "../database";
+import { router } from "./routes";
 
 const app = express();
 
 app.use(express.json());
 
-app.get("/", (request, response) => {
-    response.json({
-        message: "Ok, Server is running",
-    });
-});
+app.use(router);
 
 export { app };
