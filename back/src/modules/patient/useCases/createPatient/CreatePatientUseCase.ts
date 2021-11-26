@@ -4,7 +4,7 @@ class CreatePatientUseCase {
     constructor(private patientsRepository: IPatientsRepository) {}
 
     async execute({ name, rg, password, email, profile }): Promise<void> {
-        const patientExist = this.patientsRepository.findByEmail(email);
+        const patientExist = await this.patientsRepository.findByEmail(email);
 
         if (patientExist) {
             throw new Error("Category Exists");
