@@ -22,7 +22,7 @@ class Doctor {
     email: string;
 
     @CreateDateColumn()
-    created_at: string;
+    created_at: Date;
 
     constructor() {
         if (!this.id) {

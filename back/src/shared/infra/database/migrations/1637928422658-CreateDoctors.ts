@@ -18,7 +18,6 @@ export class CreateDoctors1637928422658 implements MigrationInterface {
                     {
                         name: "register",
                         type: "varchar",
-                        isUnique: true,
                     },
                     {
                         name: "password",
@@ -31,6 +30,7 @@ export class CreateDoctors1637928422658 implements MigrationInterface {
                     {
                         name: "email",
                         type: "varchar",
+                        isUnique: true,
                     },
                     {
                         name: "created_at",

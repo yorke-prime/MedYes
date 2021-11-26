@@ -1,8 +1,8 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 
-@Entity("patients")
-class Patient {
+@Entity("doctors")
+class Secretary {
     @PrimaryColumn()
     id: string;
 
@@ -10,7 +10,7 @@ class Patient {
     name: string;
 
     @Column()
-    rg: number;
+    admission: Date;
 
     @Column()
     password: string;
@@ -28,7 +28,10 @@ class Patient {
         if (!this.id) {
             this.id = uuid();
         }
+        if (!this.profile) {
+            this.profile = "secretary";
+        }
     }
 }
 
-export { Patient };
+export { Secretary };
