@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 
-@Entity("doctors")
+@Entity("secretaries")
 class Secretary {
     @PrimaryColumn()
     id: string;

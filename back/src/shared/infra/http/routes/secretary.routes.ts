@@ -1,11 +1,11 @@
 import { Router } from "express";
 
-import createPatientController from "../../../../modules/patient/useCases/createPatient";
+import createSecretaryController from "../../../../modules/secretary/useCases/createSecretary";
 
 const secretaryRoutes = Router();
 
 secretaryRoutes.post("/", (request, response) => {
-    return createPatientController().handle(request, response);
+    return createSecretaryController().handle(request, response);
 });
 
 export { secretaryRoutes };

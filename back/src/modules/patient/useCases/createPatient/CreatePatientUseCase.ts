@@ -3,7 +3,7 @@ import { IPatientsRepository } from "../../repositories/IPatientsRepository";
 class CreatePatientUseCase {
     constructor(private patientsRepository: IPatientsRepository) {}
 
-    async execute({ name, rg, password, email, profile }): Promise<void> {
+    async execute({ name, rg, password, email }): Promise<void> {
         const patientExist = await this.patientsRepository.findByEmail(email);
 
         if (patientExist) {
@@ -15,7 +15,6 @@ class CreatePatientUseCase {
             rg,
             password,
             email,
-            profile,
         });
     }
 }

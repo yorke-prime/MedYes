@@ -10,7 +10,7 @@ class CreateDoctorUseCase {
             throw new Error("Category Exists");
         }
 
-        this.doctorRepository.create({
+        await this.doctorRepository.create({
             name,
             register,
             password,

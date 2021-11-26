@@ -33,6 +33,12 @@ class PatientsRepository implements IPatientsRepository {
 
         return patient;
     }
+
+    async findById(id: string): Promise<Patient> {
+        const patient = await this.repository.findOne(id);
+
+        return patient;
+    }
 }
 
 export { PatientsRepository };

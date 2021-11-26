@@ -3,7 +3,7 @@ interface ICreatePatientDTO {
     rg: number;
     password: string;
     email: string;
-    profile: string;
+    profile?: string;
     id?: string;
 }
 

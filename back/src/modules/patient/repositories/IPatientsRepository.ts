@@ -4,6 +4,7 @@ import { Patient } from "./entities/Patients";
 interface IPatientsRepository {
     create(data: ICreatePatientDTO): Promise<void>;
     findByEmail(email: string): Promise<Patient>;
+    findById(id: string): Promise<Patient>;
 }
 
 export { IPatientsRepository };

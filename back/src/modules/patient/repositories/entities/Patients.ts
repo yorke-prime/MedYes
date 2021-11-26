@@ -28,6 +28,9 @@ class Patient {
         if (!this.id) {
             this.id = uuid();
         }
+        if (!this.profile) {
+            this.profile = "patient";
+        }
     }
 }
 
