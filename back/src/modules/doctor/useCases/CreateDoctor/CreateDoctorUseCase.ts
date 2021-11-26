@@ -1,3 +1,5 @@
+import { hash } from "bcryptjs";
+
 import { IDoctorRepository } from "../../repositories/IDoctorRepository";
 
 class CreateDoctorUseCase {
@@ -10,10 +12,12 @@ class CreateDoctorUseCase {
             throw new Error("Category Exists");
         }
 
+        const passwordHash = await hash(password, 8);
+
         await this.doctorRepository.create({
             name,
             register,
-            password,
+            password: passwordHash,
             email,
         });
     }

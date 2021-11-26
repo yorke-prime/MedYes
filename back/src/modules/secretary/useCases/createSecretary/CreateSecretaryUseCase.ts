@@ -1,3 +1,5 @@
+import { hash } from "bcryptjs";
+
 import { ISecretariesRepository } from "../../repositories/ISecretaryRepository";
 
 class CreateSecretaryUseCase {
@@ -13,9 +15,11 @@ class CreateSecretaryUseCase {
 
         const admissionDate = new Date(admission);
 
+        const passwordHash = await hash(password, 8);
+
         await this.secretariesRepository.create({
             admission: admissionDate,
-            password,
+            password: passwordHash,
             email,
             name,
         });

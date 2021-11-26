@@ -1,3 +1,5 @@
+import { hash } from "bcryptjs";
+
 import { IPatientsRepository } from "../../repositories/IPatientsRepository";
 
 class CreatePatientUseCase {
@@ -10,10 +12,12 @@ class CreatePatientUseCase {
             throw new Error("Category Exists");
         }
 
+        const passwordHash = await hash(password, 8);
+
         this.patientsRepository.create({
             name,
             rg,
-            password,
+            password: passwordHash,
             email,
         });
     }
