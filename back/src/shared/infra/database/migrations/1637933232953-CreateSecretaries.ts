@@ -20,6 +20,10 @@ export class CreateSecretaries1637933232953 implements MigrationInterface {
                         type: "timestamp",
                     },
                     {
+                        name: "admin_id",
+                        type: "uuid",
+                    },
+                    {
                         name: "password",
                         type: "varchar",
                     },
@@ -36,6 +40,16 @@ export class CreateSecretaries1637933232953 implements MigrationInterface {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()",
+                    },
+                ],
+                foreignKeys: [
+                    {
+                        name: "FKDoctorSecretary",
+                        referencedTableName: "doctors",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["admin_id"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL",
                     },
                 ],
             })

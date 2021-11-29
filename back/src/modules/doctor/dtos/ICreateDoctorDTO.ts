@@ -3,6 +3,7 @@ interface ICreateDoctorDTO {
     register: string;
     password: string;
     email: string;
+    clinic_name: string;
     id?: string;
 }
 

@@ -10,6 +10,9 @@ class Doctor {
     name: string;
 
     @Column()
+    clinic_name: string;
+
+    @Column()
     register: string;
 
     @Column()

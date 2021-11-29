@@ -3,6 +3,7 @@ interface ICreateSecretaryntDTO {
     admission: Date;
     email: string;
     password: string;
+    admin_id: string;
 }
 
 export { ICreateSecretaryntDTO };

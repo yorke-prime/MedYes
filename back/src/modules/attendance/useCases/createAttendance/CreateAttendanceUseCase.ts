@@ -1,3 +1,4 @@
+import { AppError } from "../../../../shared/errors/AppError";
 import { IDoctorRepository } from "../../../doctor/repositories/IDoctorRepository";
 import { IPatientsRepository } from "../../../patient/repositories/IPatientsRepository";
 import { IAttendancesRepository } from "../../repositories/IAttendancesRepository";
@@ -18,13 +19,13 @@ class CreateAttendanceUseCase {
     }) {
         const doctorExists = await this.doctorsRepository.findById(doctor_id);
         if (!doctorExists) {
-            throw new Error("Doctor not exist");
+            throw new AppError("Doctor not exist", 400);
         }
         const patientExists = await this.patientsRepository.findById(
             patient_id
         );
         if (!patientExists) {
-            throw new Error("Patient not exist");
+            throw new AppError("Patient not exist", 400);
         }
 
         await this.attendancesRepository.create({

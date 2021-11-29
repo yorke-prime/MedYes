@@ -16,6 +16,10 @@ export class CreateDoctors1637928422658 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "clinic_name",
+                        type: "varchar",
+                    },
+                    {
                         name: "register",
                         type: "varchar",
                     },

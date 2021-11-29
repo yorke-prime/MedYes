@@ -4,6 +4,7 @@ import { Secretary } from "./entities/Secretary";
 interface ISecretariesRepository {
     create(data: ICreateSecretaryntDTO): Promise<void>;
     findByEmail(email: string): Promise<Secretary>;
+    findById(id: string): Promise<Secretary>;
 }
 
 export { ISecretariesRepository };

@@ -1,5 +1,6 @@
 import { hash } from "bcryptjs";
 
+import { AppError } from "../../../../shared/errors/AppError";
 import { IPatientsRepository } from "../../repositories/IPatientsRepository";
 
 class CreatePatientUseCase {
@@ -9,7 +10,7 @@ class CreatePatientUseCase {
         const patientExist = await this.patientsRepository.findByEmail(email);
 
         if (patientExist) {
-            throw new Error("Category Exists");
+            throw new AppError("Category Exists", 400);
         }
 
         const passwordHash = await hash(password, 8);

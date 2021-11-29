@@ -15,12 +15,14 @@ class DoctorRepository implements IDoctorRepository {
         name,
         password,
         register,
+        clinic_name,
     }: ICreateDoctorDTO): Promise<void> {
         const doctor = this.repository.create({
             email,
             name,
             password,
             register,
+            clinic_name,
         });
 
         await this.repository.save(doctor);
