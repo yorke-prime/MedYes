@@ -62,9 +62,9 @@ export default function RegisterPatient() {
             {!user?.email &&
                 <C.Header>
                     <Link to="/" className="Header">Home</Link>
+                    <Link to="/sign/employee" className="Header" style={{ marginLeft: 30, }}>Funcionarios</Link>
                     <Link to="/register" className="Header" style={{ marginLeft: 30, }}>Cadastrar</Link>
                     <Link to="/sign" className="Header" style={{ marginLeft: 30, }}>Entrar</Link>
-                    <Link to="/sign/employee" className="Header" style={{ marginLeft: 30, }}>Funcionarios</Link>
                 </C.Header>
             }
             <C.Container>
