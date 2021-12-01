@@ -29,6 +29,9 @@ class Secretary {
     admission: Date;
 
     @Column()
+    clinic_name: string;
+
+    @Column()
     password: string;
 
     @Column()

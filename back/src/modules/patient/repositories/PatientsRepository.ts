@@ -39,6 +39,10 @@ class PatientsRepository implements IPatientsRepository {
 
         return patient;
     }
+    async findAll(): Promise<Patient[]> {
+        const patients = await this.repository.find();
+        return patients;
+    }
 }
 
 export { PatientsRepository };

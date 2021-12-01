@@ -15,6 +15,7 @@ class SecretariesRepository implements ISecretariesRepository {
         email,
         name,
         admin_id,
+        clinic_name,
     }: ICreateSecretaryntDTO): Promise<void> {
         const secretary = this.repository.create({
             admission,
@@ -22,6 +23,7 @@ class SecretariesRepository implements ISecretariesRepository {
             email,
             name,
             admin_id,
+            clinic_name,
         });
 
         await this.repository.save(secretary);
@@ -33,6 +35,14 @@ class SecretariesRepository implements ISecretariesRepository {
     async findById(id: string): Promise<Secretary> {
         const secretary = await this.repository.findOne(id);
         return secretary;
+    }
+    async findAll(admin_id: string): Promise<Secretary[]> {
+        const secretaries = await this.repository.find({ admin_id });
+        return secretaries;
+    }
+    async deleteSecretary(id: string): Promise<void> {
+        const secretary = await this.repository.findOne(id);
+        await this.repository.remove(secretary);
     }
 }
 

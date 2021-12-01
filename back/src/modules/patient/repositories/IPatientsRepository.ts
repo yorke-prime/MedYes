@@ -5,6 +5,7 @@ interface IPatientsRepository {
     create(data: ICreatePatientDTO): Promise<void>;
     findByEmail(email: string): Promise<Patient>;
     findById(id: string): Promise<Patient>;
+    findAll(): Promise<Patient[]>;
 }
 
 export { IPatientsRepository };

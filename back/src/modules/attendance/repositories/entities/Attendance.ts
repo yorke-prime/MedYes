@@ -18,14 +18,14 @@ class Attendance {
     id: string;
 
     @ManyToOne(() => Doctor)
-    @JoinColumn({ name: "doctor_id" })
+    @JoinColumn({ name: "patient_id", referencedColumnName: "id" })
     doctor: Doctor;
 
     @Column()
     doctor_id: string;
 
     @ManyToOne(() => Patient)
-    @JoinColumn({ name: "patient_id" })
+    @JoinColumn({ name: "patient_id", referencedColumnName: "id" })
     patient: Patient;
 
     @Column()
@@ -39,6 +39,9 @@ class Attendance {
 
     @Column()
     notes: string;
+
+    @Column()
+    clinic_name: string;
 
     @CreateDateColumn()
     created_at: Date;

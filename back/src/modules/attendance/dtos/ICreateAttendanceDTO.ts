@@ -5,6 +5,15 @@ interface ICreateAttendanceDTO {
     departure_date?: Date;
     notes: string;
     updated_at?: Date;
+    clinic_name: string;
 }
 
-export { ICreateAttendanceDTO };
+interface IEditAttendanceDTO {
+    id: string;
+    entry_date?: Date;
+    departure_date?: Date;
+    notes?: string;
+    clinic_name?: string;
+}
+
+export { ICreateAttendanceDTO, IEditAttendanceDTO };

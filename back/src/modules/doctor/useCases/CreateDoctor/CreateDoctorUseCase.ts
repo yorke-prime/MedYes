@@ -13,6 +13,16 @@ class CreateDoctorUseCase {
         email,
         clinic_name,
     }): Promise<void> {
+        const verify = (valor) => {
+            if (!valor) {
+                throw new AppError("Campo vazio!", 400);
+            }
+        };
+
+        verify(name);
+        verify(clinic_name);
+        verify(password);
+        verify(email);
         const doctorExist = await this.doctorRepository.findByEmail(email);
 
         if (doctorExist) {

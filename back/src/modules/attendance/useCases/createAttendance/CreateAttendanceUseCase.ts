@@ -16,7 +16,20 @@ class CreateAttendanceUseCase {
         patient_id,
         entry_date,
         notes,
+        clinic_name,
     }) {
+        const verify = (valor) => {
+            if (!valor) {
+                throw new AppError("Campo vazio!", 400);
+            }
+        };
+
+        verify(notes);
+        verify(doctor_id);
+        verify(patient_id);
+        verify(entry_date);
+        verify(departure_date);
+        verify(clinic_name);
         const doctorExists = await this.doctorsRepository.findById(doctor_id);
         if (!doctorExists) {
             throw new AppError("Doctor not exist", 400);
@@ -34,6 +47,7 @@ class CreateAttendanceUseCase {
             patient_id,
             entry_date,
             notes,
+            clinic_name,
         });
     }
 }

@@ -8,9 +8,19 @@ class CreatePatientUseCase {
 
     async execute({ name, rg, password, email }): Promise<void> {
         const patientExist = await this.patientsRepository.findByEmail(email);
+        const verify = (valor) => {
+            if (!valor) {
+                throw new AppError("Campo vazio!", 400);
+            }
+        };
+
+        verify(name);
+        verify(rg);
+        verify(password);
+        verify(email);
 
         if (patientExist) {
-            throw new AppError("Category Exists", 400);
+            throw new AppError("Email já está sendo utilizado!", 400);
         }
 
         const passwordHash = await hash(password, 8);

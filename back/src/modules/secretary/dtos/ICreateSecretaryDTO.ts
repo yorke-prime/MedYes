@@ -4,6 +4,7 @@ interface ICreateSecretaryntDTO {
     email: string;
     password: string;
     admin_id: string;
+    clinic_name: string;
 }
 
 export { ICreateSecretaryntDTO };

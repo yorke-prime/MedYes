@@ -33,6 +33,10 @@ export class CreateAttendance1637942729320 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "clinic_name",
+                        type: "varchar",
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()",
@@ -54,7 +58,7 @@ export class CreateAttendance1637942729320 implements MigrationInterface {
                     },
                     {
                         name: "FKPatientAttendance",
-                        referencedTableName: "doctors",
+                        referencedTableName: "patients",
                         referencedColumnNames: ["id"],
                         columnNames: ["patient_id"],
                         onDelete: "SET NULL",

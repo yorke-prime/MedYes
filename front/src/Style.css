@@ -1,0 +1,40 @@
+
+.Header:hover {
+    color: white;
+}
+
+.Header {
+  text-decoration: none;
+}
+
+.main {
+  margin: 0px;
+  width:100%;
+}
+
+.linkagem {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  text-decoration: 30px;
+}
+
+.linkagemJ {
+  background-color: burlywood;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  width: 60px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  text-decoration: none;
+}

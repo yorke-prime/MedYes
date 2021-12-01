@@ -24,6 +24,10 @@ export class CreateSecretaries1637933232953 implements MigrationInterface {
                         type: "uuid",
                     },
                     {
+                        name: "clinic_name",
+                        type: "varchar",
+                    },
+                    {
                         name: "password",
                         type: "varchar",
                     },

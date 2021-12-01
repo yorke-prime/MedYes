@@ -38,6 +38,15 @@ class DoctorRepository implements IDoctorRepository {
 
         return doctor;
     }
+    async findAll(): Promise<Doctor[]> {
+        const doctors = await this.repository.find();
+
+        return doctors;
+    }
+    async deleteDoctor(id: string): Promise<void> {
+        const doctor = await this.repository.findOne(id);
+        await this.repository.remove(doctor);
+    }
 }
 
 export { DoctorRepository };

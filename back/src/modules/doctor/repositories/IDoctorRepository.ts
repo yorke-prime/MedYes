@@ -5,6 +5,8 @@ interface IDoctorRepository {
     create(data: ICreateDoctorDTO): Promise<void>;
     findByEmail(email: string): Promise<Doctor>;
     findById(id: string): Promise<Doctor>;
+    findAll(): Promise<Doctor[]>;
+    deleteDoctor(id: string): Promise<void>;
 }
 
 export { IDoctorRepository };

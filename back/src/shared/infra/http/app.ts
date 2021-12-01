@@ -1,3 +1,4 @@
+import cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 import "reflect-metadata";
@@ -9,9 +10,12 @@ import { router } from "./routes";
 createConnection();
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use(router);
-
+app.use("/test", (request: Request, response: Response) => {
+    return response.send("OK");
+});
 app.use(
     (err: Error, request: Request, response: Response, next: NextFunction) => {
         if (err instanceof AppError) {

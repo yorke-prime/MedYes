@@ -6,7 +6,8 @@ class CreateSecretaryController {
     constructor(private createSecretaryUseCase: CreateSecretaryUseCase) {}
 
     async handle(request: Request, response: Response): Promise<Response> {
-        const { admission, password, email, name, admin_id } = request.body;
+        const { admission, password, email, name, admin_id, clinic_name } =
+            request.body;
 
         await this.createSecretaryUseCase.execute({
             admission,
@@ -14,6 +15,7 @@ class CreateSecretaryController {
             email,
             name,
             admin_id,
+            clinic_name,
         });
 
         return response.status(201).send();

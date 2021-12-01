@@ -16,7 +16,20 @@ class CreateSecretaryUseCase {
         email,
         name,
         admin_id,
+        clinic_name,
     }): Promise<void> {
+        const verify = (valor) => {
+            if (!valor) {
+                throw new AppError("Campo vazio!", 400);
+            }
+        };
+
+        verify(name);
+        verify(admission);
+        verify(password);
+        verify(email);
+        verify(admin_id);
+        verify(clinic_name);
         const secretaryExists = await this.secretariesRepository.findByEmail(
             email
         );
@@ -41,6 +54,7 @@ class CreateSecretaryUseCase {
             email,
             name,
             admin_id,
+            clinic_name,
         });
     }
 }
