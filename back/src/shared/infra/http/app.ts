@@ -16,6 +16,7 @@ app.use(router);
 app.use("/test", (request: Request, response: Response) => {
     return response.send("OK");
 });
+
 app.use(
     (err: Error, request: Request, response: Response, next: NextFunction) => {
         if (err instanceof AppError) {
